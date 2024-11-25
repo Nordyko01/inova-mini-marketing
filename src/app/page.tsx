@@ -1,5 +1,5 @@
 'use client'
-import React from "react";
+import React, {useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -31,7 +31,6 @@ import {
 import { FaEnvelope, FaPhone, FaArrowRightArrowLeft } from "react-icons/fa6";
 import { FaUserAlt, FaCarSide, FaUserShield } from "react-icons/fa";
 import { PiMapPinFill, PiMagnifyingGlassBold } from "react-icons/pi";
-import { CgChevronDown } from "react-icons/cg";
 import { BsBagFill } from "react-icons/bs";
 
 
@@ -160,7 +159,15 @@ const produtos: produto[] = [
 export default function Home() {
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
-  )
+  );
+
+
+  const [filtro, setFiltro] = useState<string>("Todos Produtos");
+
+  const produtosFiltrados =
+    filtro === "Todos Produtos"
+      ? produtos
+      : produtos.filter((produto) => produto.descripition === filtro);
 
   return (
     <div className="flex flex-col items-center  max-w-full ">
@@ -187,23 +194,23 @@ export default function Home() {
 
           <div className="flex items-center justify-between  w-[470px]">
             <Link href="#" className="hover:text-[#81C408] text-[#81C408] text-xl ">Casa</Link>
-            <Link href="#" className="hover:text-[#81C408] text-xl ">Loja</Link>
-            <Link href="#" className="hover:text-[#81C408] text-xl ">Detales da Loja</Link>
+            <Link href="./loja" className="hover:text-[#81C408] text-xl ">Loja</Link>
+            <Link href="./shop-detail" className="hover:text-[#81C408] text-xl ">Detales da Loja</Link>
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="hover:text-[#81C408] text-xl flex items-center duration-300">Páginas</NavigationMenuTrigger>
                   <NavigationMenuContent className="grid w-[200px] gap-5 p-4 md:w-[200px] md:grid-cols-1 lg:w-[200px] ">
-                    <NavigationMenuLink href="#" className="hover:bg-[#FFB524]  w-full">Link</NavigationMenuLink>
-                    <NavigationMenuLink className="hover:bg-[#FFB524] ">Link</NavigationMenuLink>
-                    <NavigationMenuLink className="hover:bg-[#FFB524] ">Link</NavigationMenuLink>
-                    <NavigationMenuLink className="hover:bg-[#FFB524] ">Link</NavigationMenuLink>
+                    <NavigationMenuLink href="./card" className="hover:bg-[#FFB524]  ">Cartão</NavigationMenuLink>
+                    <NavigationMenuLink href="./checkout" className="hover:bg-[#FFB524] ">Confira</NavigationMenuLink>
+                    <NavigationMenuLink href="./testimonial" className="hover:bg-[#FFB524] ">Testemunhos</NavigationMenuLink>
+                    <NavigationMenuLink href="./404-page" className="hover:bg-[#FFB524] ">Página 404</NavigationMenuLink>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
 
-            <Link href="#" className="hover:text-[#81C408] text-xl ">Contactos</Link>
+            <Link href="./contact" className="hover:text-[#81C408] text-xl ">Contactos</Link>
           </div>
 
           <div className="flex items-center justify-between text-[#81C408] w-44 h-16 ">
@@ -272,17 +279,17 @@ export default function Home() {
         <div className="flex items-center justify-between w-[1500px] ">
           <h2 className="text-4xl font-medium text-slate-600">Nossos Produtos Eletrónicos</h2>
           <div className=" flex items-center justify-between w-[800px] ">
-            <Button variant="outline" className=" border-none rounded-[20px] w-36 h-12 bg-[#FFB524] text-white  font-semibold">Todos Produtos</Button>
-            <Button variant="outline" className="bg-slate-100 border-none rounded-[20px] w-36 h-12 text-slate-600 font-semibold">Vgetais</Button>
-            <Button variant="outline" className="bg-slate-100 border-none rounded-[20px] w-36 h-12 text-slate-600 font-semibold">Frutais</Button>
-            <Button variant="outline" className="bg-slate-100 border-none rounded-[20px] w-36 h-12 text-slate-600 font-semibold">Pão</Button>
-            <Button variant="outline" className="bg-slate-100 border-none rounded-[20px] w-36 h-12 text-slate-600 font-semibold">Carne</Button>
+            <Button  onClick={() => setFiltro("Todos Produtos")} variant="outline" className={`${filtro ?"bg-[#FFB524] text-white":"bg-slate-100 text-slate-600"}  border-none rounded-[20px] w-36 h-12   font-semibold`}>Todos Produtos</Button>
+            <Button onClick={() => setFiltro("Vegetais")} variant="outline" className="bg-slate-100 border-none rounded-[20px] w-36 h-12 text-slate-600 font-semibold">Vgetais</Button>
+            <Button  onClick={() => setFiltro("Frutais")} variant="outline" className="bg-slate-100 border-none rounded-[20px] w-36 h-12 text-slate-600 font-semibold">Frutais</Button>
+            <Button onClick={() => setFiltro("pão")} variant="outline" className="bg-slate-100 border-none rounded-[20px] w-36 h-12 text-slate-600 font-semibold">Pão</Button>
+            <Button onClick={() => setFiltro("Carne")} variant="outline" className="bg-slate-100 border-none rounded-[20px] w-36 h-12 text-slate-600 font-semibold">Carne</Button>
           </div>
         </div>
 
         <div className="mt-10">
           <div className=" grid grid-cols-4 gap-2">
-            {produtos.map((produto) => (
+            {produtosFiltrados.map((produto) => (
               <div key={produto.id} className="rounded-3xl w-[350px] h-[500px] hover:shadow-xl hover:shadow-slate-700 ">
                 <div>
                   <span className="bg-[#FFB524] text-white  absolute py-2 px-4 rounded-xl ml-7 mt-4 ">{produto.descripition}</span>
