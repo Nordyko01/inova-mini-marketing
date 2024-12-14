@@ -22,7 +22,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y, } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import Produtos from "@/componentspage/home/produtos";
+import Produtos from "@/components/home/produtos";
 
 interface props {
     id: string;

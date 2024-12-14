@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 
 import Home from "./home/page";
-import Navigations from "@/componentspage/navigations";
-import Rodap from "@/componentspage/rodap";
+import Navigations from "@/components/navigations";
+import Rodap from "@/components/rodap";
 
 export default function App() {
   return (

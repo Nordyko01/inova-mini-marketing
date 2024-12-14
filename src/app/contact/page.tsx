@@ -8,9 +8,9 @@ import { Textarea } from "@/components/ui/textarea";
 
 import { IoMdMail } from "react-icons/io";
 import { FaPhone, FaLocationDot } from "react-icons/fa6";
-import Navigations from "@/componentspage/navigations";
-import Rodap from "@/componentspage/rodap";
-import Footer from "@/componentspage/footer";
+import Navigations from "@/components/navigations";
+import Rodap from "@/components/rodap";
+import Footer from "@/components/footer";
 
 
 interface Props {

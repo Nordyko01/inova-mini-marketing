@@ -1,7 +1,7 @@
 'use client'
-import Footer from "@/componentspage/footer";
-import Navigations from "@/componentspage/navigations";
-import Rodap from "@/componentspage/rodap";
+import Footer from "@/components/footer";
+import Navigations from "@/components/navigations";
+import Rodap from "@/components/rodap";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
