@@ -1,17 +1,12 @@
 'use client'
-import React, { useState } from "react";
+import React from "react";
 
-import Home from "./home/page";
-import Navigations from "@/components/navigations";
-import Rodap from "@/components/rodap";
+import Login from "./login/login/page";
 
 export default function App() {
   return (
     <div>
-      <Navigations/>
-       <Home />
-      <Rodap/>
-     
+      <Login/>
     </div>
   );
 }

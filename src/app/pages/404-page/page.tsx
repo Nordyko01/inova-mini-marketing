@@ -1,7 +1,6 @@
 'use client'
 import Footer from "@/components/footer";
-import Navigations from "@/components/navigations";
-import Rodap from "@/components/rodap";
+import Navigations from "@/components/layoult/navbar";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -10,7 +9,6 @@ import React from "react";
 export default function page_404() {
     return (
         <>
-            <Navigations />
             <Footer title="404 Error"/>
             <div className="flex items-center mt-[76px]">
                 <Image width={1000} height={1000} src="/img/not_fond.png" alt="not-fond" className="object-cover " />
@@ -19,7 +17,6 @@ export default function page_404() {
                     Voltar para casa
                 </Link>
             </div>
-            <Rodap />
         </>
 
     )

@@ -8,8 +8,8 @@ import { Textarea } from "@/components/ui/textarea";
 
 import { IoMdMail } from "react-icons/io";
 import { FaPhone, FaLocationDot } from "react-icons/fa6";
-import Navigations from "@/components/navigations";
-import Rodap from "@/components/rodap";
+import Navigations from "@/components/layoult/navbar";
+import Rodap from "@/components/layoult/rodap";
 import Footer from "@/components/footer";
 
 
@@ -48,8 +48,7 @@ export default function Contactos() {
     return (
         <>
             <div className="flex flex-col items-center">
-                <Navigations />
-                <Footer title="Cotactos"/>
+                <Footer title="Cotactos" />
                 <div className="w-[1400px] bg-slate-200 h-[1300px] flex flex-col items-center justify-around mt-36">
                     <div className="flex flex-col text-center">
                         <h2 className="text-[#81C408] text-4xl">Entre em contato</h2>
@@ -65,7 +64,7 @@ export default function Contactos() {
                             <Input type="text" placeholder="Seu some" className="w-[700px] h-16 " />
                             <Input type="email" placeholder="Digite seu Email" className="w-[700px] h-16 " />
                             <Textarea placeholder="Sua mensagem" className="w-[700px] h-52" />
-                            <Button variant="outline" className="w-[700px] h-16 ">Button</Button>
+                            <Button variant="outline" className="w-[700px] h-16 border-[1px] border-[#FFB524] hover:bg-[#FFB524] hover:text-white ">Button</Button>
 
                         </div>
 
@@ -88,7 +87,6 @@ export default function Contactos() {
                     </div>
 
                 </div>
-                <Rodap />
             </div>
         </>
     )

@@ -14,7 +14,7 @@ export default function Footer({title}:prop){
         <div className="z-30 relative flex flex-col items-center">
             <h1 className="text-white text-4xl ">{title}</h1>
             <div className="flex items-center">
-                <Link href="." className="text-[#81C408] px-3">Casa  /</Link>
+                <Link href="/pages/home" className="text-[#81C408] px-3">Casa  /</Link>
                 <Link href="#" className="text-[#81C408] px-3">Páginas  /</Link>
                 <p className="text-white">{title}</p>
             </div>
