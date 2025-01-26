@@ -24,6 +24,8 @@ import { FaStar } from "react-icons/fa";
 import Tabledescription from "@/components/shop-detail/tabledescription";
 import Review from "./review";
 import Star from "@/components/shop-detail/star";
+import { FaAppleAlt } from "react-icons/fa";
+import { GiOrange, GiBananaBunch, GiStrawberry } from "react-icons/gi";
 
 const FormSchema = z.object({
   username: z.string().min(2, {}),
@@ -31,7 +33,53 @@ const FormSchema = z.object({
   palavras_chave: z.string().min(2, {}),
   bio: z
     .string().max(160, {}),
-})
+});
+
+const Categorias = [
+  {
+    title: "Maçã",
+    Icon: <FaAppleAlt />,
+    number: "12",
+  },
+  {
+    title: "Laranja",
+    Icon: <GiOrange />,
+    number: "34",
+  },
+  {
+    title: "morango",
+    Icon: <GiStrawberry />,
+    number: "45",
+  },
+  {
+    title: "Banana",
+    Icon: <GiBananaBunch />,
+    number: "66",
+  },
+  {
+    title: "Abóbora",
+    Icon: <IoSearchSharp />,
+    number: "96",
+  },
+];
+
+const Produtosdestaque =[
+  {
+    nome: "Banana",
+  },
+  {
+    nome: "Laranja",
+  },
+  {
+    nome: "Abóbora",
+  },
+  {
+    nome: "morango",
+  },
+  {
+    nome: "Maçã",
+  },
+]
 
 
 export default function Shop_Detail() {
@@ -167,7 +215,7 @@ export default function Shop_Detail() {
                     <FormControl>
                       <Textarea
                         placeholder="Suas avaliações"
-                        className="resize-none border-none shadow-sm shadow-black h-[300px] "
+                        className="resize-none border-none shadow-sm shadow-black h-[200px] "
                         {...field}
                       />
                     </FormControl>
@@ -195,20 +243,64 @@ export default function Shop_Detail() {
                 <FormItem>
 
                   <FormControl>
-                     <div className="flex items-center border-2 h-16 rounded-2xl">
-                    <Input placeholder="palavras-chave" {...field} className="border-none !outline-none focus:!border-none h-[90%]" />
-                    <div className="w-16 h-full flex items-center justify-center bg-slate-200 rounded-r-2xl">
-                    <IoSearchSharp className="text-4xl text-slate-400" />
+                    <div className="flex items-center border-2 h-16 rounded-2xl">
+                      <Input placeholder="palavras-chave" {...field} className="border-none !outline-none focus:!border-none h-[90%]" />
+                      <div className="w-16 h-full flex items-center justify-center bg-slate-200 rounded-r-2xl">
+                        <IoSearchSharp className="text-4xl text-slate-400" />
+                      </div>
                     </div>
-                  </div>
                   </FormControl>
                 </FormItem>
               )}
             />
 
-            <div className="mt-8">
-              <h5>Categorias</h5>
+            <div className="mt-3">
+              <h5 className="text-2xl font-semibold py-7">Categorias</h5>
+              <div className="grid gap-4">
+                {Categorias.map((item) => (
+                  <div key={item.title} className="flex items-center justify-between ">
+                    <Link href="#" className="flex items-center text-[#87ab45] hover:text-[#FFB524] text-xl gap-2">
+                      {item.Icon}
+                      {item.title}
+                    </Link>
+                    <span>({item.number})</span>
+                  </div>
+                ))}
+              </div>
+
             </div>
+
+            <div className="mt-3">
+              <h6 className="text-2xl font-semibold py-7">Produtos em destaque</h6>
+              <div className="grid gap-4">
+               {Produtosdestaque.map((item) =>(
+                 <div key={item.nome} className="flex items-center">
+                  <Image width={100} height={100} src="/img/featur-1.jpg" alt="imagem" className="object-cover"/>
+                  <div className="grid gap-2">
+                    <span className="text-2xl ">{item.nome}</span>
+                    <span className="flex text-[#FFB524]">
+                      <FaStar className="w-5 h-5" />
+                      <FaStar className="w-5 h-5" />
+                      <FaStar className="w-5 h-5" />
+                      <FaStar className="w-5 h-5" />
+                      <FaStar className="w-5 h-5 text-slate-400" />
+                    </span>
+                    <div className="text-xl flex gap-2">
+                      <span className="">2.99 Kz</span>
+                      <span className="text-red-400 decoration-inherit text-danger line-through">4.11 Kz</span>
+                    </div>
+                  </div>
+                </div>
+               ))}
+              </div>
+            </div>
+
+            <Link href="#" className="mt-10 border-2 border-[#FFB524] text-[#87ab45] hover:bg-[#FFB524] hover:text-white flex items-center justify-center gap-2 py-3 px-2 rounded-[50px] text-2xl">Ver Mais</Link>
+
+               <div className="w-full h-auto rounded-2xl mt-10">
+                <p className="text-[#FFB524] text-4xl font-bold absolute w-12 ml-[250px] mt-56">Frutas Frescas Banner</p>
+                <Image width={400} height={400} src="/img/banner-fruits.jpg" alt="image" className="rounded-2xl"/>
+               </div>
 
           </div>
 
