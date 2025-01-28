@@ -5,15 +5,15 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
-} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import Footer from "@/components/footer";
 import CategoryProdutos from "@/components/home/categoryProdutos";
 import Image from "next/image";
@@ -79,7 +79,7 @@ const Produtosdestaque =[
   {
     nome: "Maçã",
   },
-]
+];
 
 
 export default function Shop_Detail() {
@@ -285,9 +285,9 @@ export default function Shop_Detail() {
                       <FaStar className="w-5 h-5" />
                       <FaStar className="w-5 h-5 text-slate-400" />
                     </span>
-                    <div className="text-xl flex gap-2">
-                      <span className="">2.99 Kz</span>
-                      <span className="text-red-400 decoration-inherit text-danger line-through">4.11 Kz</span>
+                    <div className="text-xl flex gap-2 ">
+                      <span className="italic ">2.99 Kz</span>
+                      <span className="text-red-400 decoration-inherit text-danger line-through italic">4.11 Kz</span>
                     </div>
                   </div>
                 </div>
