@@ -1,14 +1,10 @@
 'use client'
 
 import Image from "next/image";
-import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
-
-import { AiOutlineClose } from "react-icons/ai";
+import React from "react";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,

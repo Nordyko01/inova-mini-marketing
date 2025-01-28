@@ -50,7 +50,6 @@ const initialItems = [
 export default function ProdutList() {
   const [items, setItems] = useState(initialItems);
 
-  // Função para excluir item da lista
   const handleDelete = (index: number) => {
     const updatedItems = items.filter((_, i) => i !== index);
     setItems(updatedItems);

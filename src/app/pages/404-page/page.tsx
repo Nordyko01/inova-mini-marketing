@@ -1,6 +1,6 @@
 'use client'
+
 import Footer from "@/components/footer";
-import Navigations from "@/components/layoult/navbar";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";

@@ -22,7 +22,7 @@ import { IoSearchSharp } from "react-icons/io5";
 import Counter from "@/components/cardes/counter";
 import { FaStar } from "react-icons/fa";
 import Tabledescription from "@/components/shop-detail/tabledescription";
-import Review from "./review";
+import Review from "../../../components/shop-detail/review";
 import Star from "@/components/shop-detail/star";
 import { FaAppleAlt } from "react-icons/fa";
 import { GiOrange, GiBananaBunch, GiStrawberry } from "react-icons/gi";

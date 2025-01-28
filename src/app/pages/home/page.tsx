@@ -19,8 +19,6 @@ import { FaCarSide, FaUserShield, FaUsers } from "react-icons/fa";
 import { BsBagFill } from "react-icons/bs";
 import { TbNumber1 } from "react-icons/tb";
 
-import 'swiper/css';
-import 'swiper/css/navigation';
 import { ListaDeProdutos, Produtos } from "@/components/home/produtos";
 import CategoryProdutos from "@/components/home/categoryProdutos";
 import NossosTestemunhas from "@/components/testemunhas/nossosTestemunhas";
